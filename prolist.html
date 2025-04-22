@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prolist(상품이미지리스트)</title>
+    <style>
+      *{margin: 0;padding: 0;}
+      .gallery{
+        width: 796px;padding: 20px;
+        border: 7px solid #ccc;
+        margin:50px auto;
+      }
+      .gallery ul{width: 100%;}
+      .gallery li{width: 250px;height: 200px;
+       float: left;border: 1px solid #000;
+       margin: 0 20px 20px 0;
+       position: relative;overflow: hidden;
+    }
+    .gallery ul:after{content:'';display: block;clear: both;}
+    
+    /* 
+      <li class="fm">내용</li> 
+      .fm { 스타일적용} 일반사용표현
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li> ....
+      li:first-child() - 리스트의 첫번째요소
+      li:nth-child(7)  - 리스트의 n번째요소
+      li:last-child()  - 리스트의 마지막요소
+    */
+    .gallery li:nth-child(3n){ margin-right: 0;}
+    .gallery li:nth-child(n+3){margin-bottom: 0;}
+
+    .gallery li img, .gallery li div{transition: all 1s;}
+
+    .gallery li img{width: 100%;height: 100%;}
+    .gallery li div{width: 100%;height: 60px;
+             font:18px/60px '고딕';color: #fff;
+             background-color:rgba(0,0,0,0.7);
+            position: absolute;left: 0;bottom:-60px;}
+    .gallery li:hover img{  transform: scale(1.2);}
+    .gallery li:hover div{bottom: 0;}    
+    </style>
+</head>
+<body>
+   <div class="gallery">
+    <ul>
+        <li>
+            <img src="img/bc1.jpg" alt="Product1">
+            <div>배경사진 : <em>바이올렛</em></div>
+        </li>
+        <li>
+            <img src="img/bc2.jpg" alt="Product2">
+            <div>배경사진 : <em>파랑</em></div>
+        </li>
+        <li>
+            <img src="img/bc3.jpg" alt="Product3">
+            <div>배경사진 : <em>분홍</em></div>
+        </li>
+        <li>
+            <img src="img/bc4.jpg" alt="Product4">
+            <div>배경사진 : <em>파스텔</em></div>
+        </li>
+        <li>
+            <img src="img/bc5.jpg" alt="Product5">
+            <div>배경사진 : <em>그린</em></div>
+        </li>
+        <li>
+            <img src="img/bc6.jpg" alt="Product6">
+            <div>배경사진 : <em>청록</em></div>
+        </li>
+    </ul>
+   </div> 
+</body>
+</html>
