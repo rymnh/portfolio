@@ -133,6 +133,17 @@
     #footer .f_copy {height: 100px;line-height: 100px;text-align: center;}
     </style>
     <script src="script/jquery-1.12.4.min.js"></script>
+     <script>
+
+        function poplink(link){
+
+            var wlink=link;
+
+            window.open(wlink);
+
+        }
+
+    </script>
 </head>
 <body>
     <div id="wrap">
@@ -244,9 +255,8 @@
 
                 <div class="linkBtn">
 
-                  <a href="lesnsgogo/mobi_mky.pdf"><button>기획서</button></a>
-
-                  <a href="lesnsgogo/index.html"><button>웹사이트</button></a>
+                  <button onclick="poplink('lesnsgogo/mobi_mky.pdf')"> 기획서 </button>
+                  <button onclick="poplink('lesnsgogo/index.html')"> 웹사이트 </button>
 
                 </div>
 
@@ -274,10 +284,8 @@
                 </ul>
 
                 <div class="linkBtn">
-
-                  <a href="converse/반응형 기획서_김미연.pdf"><button>기획서</button></a>
-
-                  <a href="converse/index.html"><button>웹사이트</button></a>
+                  <button onclick="poplink('converse/mw_kmy.pdf')"> 기획서 </button>
+                  <button onclick="poplink('converse/index.html')"> 웹사이트 </button>
 
                 </div>
 
@@ -305,11 +313,8 @@
                 </ul>
 
                 <div class="linkBtn">
-
-                  <a href="stavia/데스크탑 기획서_김미연.pdf"><button>기획서</button></a>
-
-                  <a href="stavia/index.html"><button>웹사이트</button></a>
-
+                  <button onclick="poplink('stavia/dt_kmy.pdf')"> 기획서 </button>
+                  <button onclick="poplink('stavia/index.html')"> 웹사이트 </button>
                 </div>
 
              </div><!-- portbox1 end -->
