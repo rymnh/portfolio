@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detail</title>
+    <link rel="stylesheet" href="css/detail.css">
+    <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">LENSGOGO</a></h1>
+        <p class="login_icon"></p> 
+        <nav class="gnb">
+            <a href="#" class="gnb_btn"><img src="img/gnb_btn_black.png" alt="menu"></a>
+            <a href="login.html" class="uicon"><img src="img/uicon.png" alt="icon"></a>
+            <ul class="gnb_list">
+                <li><a href="index.html">홈</a></li>
+                <li>콘텍트렌즈</li>
+                <li>컬러렌즈</li>
+                <li><a href="product.html">모든 렌즈 보기</a></li>
+                <li><a href="event.html">이벤트</a></li>
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="join-1.html">회원가입</a></li>
+                <li><a href="customer.html">Q & A</a></li>
+            </ul> 
+        </nav>
+        <div class="search_wrap">
+            <form action="#" method="get" class="search_box">
+            <fieldset>
+              <legend class="blind">검색폼</legend>
+               <input type="search" placeholder="검색어입력" />
+               <input type="image" class="searchBtn" src="img/search_btn.png" alt="검색"/>
+            </fieldset>
+            </form>
+           </div>
+    </header>
+    <div id="container_sub">
+        <div class="detail">
+          <div class="dimg"><img src="img/pr1.gif" alt="pr1"></div>
+          <div class="dlist">
+             <ul>
+                 <li> <span>쿠퍼비전 바이오피니티 6개</span> </li>
+                 <li> <span>★★★★★ (13965)</span> </li>
+                 <li> <span>₩32,550</span> </li>
+            </ul>
+            <div class="total">
+             <!-- <span>멘진 올인원 기프트세트</span> <br>
+             <input type="number" step="1" min="1" max="20">
+             <label for="">23,400원</label> -->
+             <label for=""> 도수  </label>
+             <select name="fsize" id="fs">
+                 <option value="--">0.0</option>
+                 <option value="1">-1.0</option>
+                 <option value="2">-2.0</option>
+                 <option value="3">-3.0</option>
+                 <option value="4">-4.0</option>
+                 <option value="5">-5.0</option>
+                 <option value="6">-6.0</option>
+                 <option value="7">-7.0</option>
+                 <option value="8">-8.0</option>
+                 <option value="9">-9.0</option>
+             </select>
+             <label for=""> 도수  </label>
+             <select name="fsize" id="fs">
+                <option value="--">0.0</option>
+                 <option value="1">-1.0</option>
+                 <option value="2">-2.0</option>
+                 <option value="3">-3.0</option>
+                 <option value="4">-4.0</option>
+                 <option value="5">-5.0</option>
+                 <option value="6">-6.0</option>
+                 <option value="7">-7.0</option>
+                 <option value="8">-8.0</option>
+                 <option value="9">-9.0</option>
+             </select><br><br>
+             <label for=""> 수량  </label>
+             <button onclick="minus()">-</button>
+  
+             <input type="text" id="test_obj" value="1"/>
+         
+             <button onclick="plus()">+</button>
+
+             <button onclick="minus2()">-</button>
+  
+      <input type="text" id="test_obj2" value="1"/>
+  
+      <button onclick="plus2()">+</button>
+           <!-- <label for=""> 수량  </label>
+             <input type="text" size="25" value="1" id="count">
+             <input type="button" value="+" id="plus" onclick="plus()">
+             <input type="button" value="-" id="moins" onclick="minus()">
+            <p></p> -->
+            <!-- <label for=""> 수량  </label>
+             <input type="text" size="25" value="1" id="count2">
+             <input type="button" value="+" id="plus2" onclick="plus2()">
+             <input type="button" value="-" id="moins2" onclick="minus2()">
+            <p></p> -->
+            <!-- <label for="">최종가격</label> <input type="text" value="32550" id="total_count" hidden=hidden />
+            <input type="text" value="32550" id="total_count_view"  /><span>원</span> -->
+         
+             <button class="btn1">장바구니</button>
+             <button class="btn2">BUY NOW</button>
+            </div>
+          </div>
+        </div>
+        <div class="detail-info">
+         <p><img src="img/detail.png" alt="1"></p>
+        </div>
+      </div>
+      <footer>
+        <p class="copyright">Lensgogo is a trademark of Endo & Co </p>
+       <p>아큐브 바슈롬 쿠퍼비전 렌즈직구 일회용렌즈 원데이렌즈 렌즈추천</p>
+    </footer>
+
+      
+  
+  <script>
+      function plus() {
+          var tmp = document.getElementById("test_obj").value;
+          tmp++;
+          document.getElementById("test_obj").value = tmp;
+      }
+      function minus() {
+          var tmp = document.getElementById("test_obj").value;
+          tmp--;
+          document.getElementById("test_obj").value = tmp;
+      }
+
+      function plus2() {
+          var tmp = document.getElementById("test_obj2").value;
+          tmp++;
+          document.getElementById("test_obj2").value = tmp;
+      }
+      function minus2() {
+          var tmp = document.getElementById("test_obj2").value;
+          tmp--;
+          document.getElementById("test_obj2").value = tmp;
+      }
+    // //  수량가격계산 스트립트
+    //    <script>
+    //    var count = 1;
+    //    var countEl = document.getElementById("count");
+    //    var total_count = document.getElementById("total_count"); //추가
+    //    var total_count_view = document.getElementById("total_count_view"); //추가
+    //    function plus(){
+    //    count++;
+    //    countEl.value = count;
+    //    total_count_view.value = total_count.value * countEl.value; //추가
+    //    }
+    //    function minus(){
+    //    if (count > 1) {
+    //        count--;
+    //        countEl.value = count;
+    //    total_count_view.value = total_count_view.value - total_count.value; //추가  
+    //    }  
+    //    }
+    // // var count2 = 1;
+    // // var countEl = document.getElementById("count2");
+    // // var total_count = document.getElementById("total_count"); //추가
+    // // var total_count_view = document.getElementById("total_count_view"); //추가
+    // // function plus2(){
+    // count2++;
+    // countEl.value = count2;
+    // total_count_view.value = total_count.value * countEl.value; //추가
+    // }
+    // function minus2(){
+    
+    // if (count2 > 1) {
+    //     count2--;
+    //     countEl.value = count2;
+    // total_count_view.value = total_count_view.value - total_count.value; //추가  
+    // }  
+    // }
+</script>
+</body>
+</html>

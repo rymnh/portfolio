@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        //아이디암호 입력 체크 스크립트
+
+        function idpwCheck(){
+            var idVal=document.getElementById("id");
+            var pwVal=document.getElementById("pw");
+            if(!idVal.value){
+                alert("아이디를 입력해주세요.");
+                idVal.focus();
+                return false;
+            }
+            if(!pwVal.value){
+                alert("비밀번호를 입력해주세요.");
+                pwVal.focus();
+                return false;
+            }
+            frm.submit();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">LENSGOGO</a></h1>
+        <p class="login_icon"></p> 
+        <nav class="gnb">
+            <a href="#" class="gnb_btn"><img src="img/gnb_btn_black.png" alt="menu"></a>
+            <a href="login.html" class="uicon"><img src="img/uicon.png" alt="icon"></a>
+            <ul class="gnb_list">
+                <li><a href="index.html">홈</a></li>
+                <li>콘텍트렌즈</li>
+                <li>컬러렌즈</li>
+                <li><a href="product.html">모든 렌즈 보기</a></li>
+                <li><a href="event.html">이벤트</a></li>
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="join-1.html">회원가입</a></li>
+                <li><a href="customer.html">Q & A</a></li>
+            </ul> 
+        </nav>
+        <div class="search_wrap">
+            <form action="#" method="get" class="search_box">
+            <fieldset>
+              <legend class="blind">검색폼</legend>
+               <input type="search" placeholder="검색어입력" />
+               <input type="image" class="searchBtn" src="img/search_btn.png" alt="검색"/>
+            </fieldset>
+            </form>
+           </div>
+    </header>
+    <div id="container_sub">
+        <h1>로그인</h1>         
+        <div class="loginpage">
+           <form action="index.html" method="post" name="frm" onsubmit="return idpwCheck()">
+               <fieldset>
+                   <legend class="blind">로그인폼</legend>
+                   <div class="inputText">
+                       <p>
+                           <label for="id" class="blind">ID</label>
+                           <input type="text" name="id" id="id" title="아이디 또는 이메일을 입력하세요." placeholder="아이디 또는 이메일을 입력하세요.">
+                       </p>
+                       <p>
+                           <label for="pw" class="blind">PASSWORD</label>
+                           <input type="password" name="pw" id="pw" title="비밀번호를 입력하세요." placeholder="비밀번호를 입력하세요.">
+                       </p>
+                   </div>
+                   <div class="save">
+                       <input type="checkbox" name="saveid" id="saveid">
+                       <label for="saveid">기억하기</label>
+                       <p>비밀번호를 잊어버리셨나요?</p>
+                   </div>
+                   <div class="inputBtn">
+                       <input type="submit" value="로그인">
+                   </div>
+                   <div class="inputBtn2">
+                    <input type="submit" value="회원가입">
+                </div>
+               </fieldset>
+            </form>
+        </div>
+       </div>
+       <footer>
+        <p class="copyright">Lensgogo is a trademark of Endo & Co </p>
+       <p>아큐브 바슈롬 쿠퍼비전 렌즈직구 일회용렌즈 원데이렌즈 렌즈추천</p>
+    </footer>
+</body>
+</html>

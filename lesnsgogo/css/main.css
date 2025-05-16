@@ -1,0 +1,14 @@
+@import url(common.css);
+@import url(header.css);
+@import url(footer.css);
+
+/* #list_sub ul li img{position: relative;float: left;left: 10px;}  */
+#list_sub ul li p{font-size: 1em;color: #2e2e2e;text-align: center;}
+#container{padding: 0 5px 5px 5px;margin-top: 87px;}
+#list_sub{padding: 5px;}
+#list_sub .p_list{margin-bottom: 10px;}
+#list_sub .p_list::after{content: '';display: block;clear: both;}
+#list_sub .p_list li{float: left;width: 25%;}
+#list_sub .p_list li a{display: block;margin-right: 5px;margin-bottom: 10px;}
+#list_sub .p_list li:nth-child(2n) a{margin-right: 0;margin-left: 5px;}
+#list_sub .p_list li a img{width: 90px;height: 105px;}

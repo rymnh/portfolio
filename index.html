@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my-portfolio</title>
+    <style>
+      /* reset */
+      *{margin: 0;padding: 0;   }
+      body{font-size: 20px;font-family: '돋움';
+      color: #000;}
+      li{list-style: none;}
+      a{text-decoration: none;color: #000;}
+      img{vertical-align: top;}
+      
+      /*layout*/
+    #wrap{width: 1200px;height: auto;margin: 0 auto;}
+
+    #wrap >div:nth-child(odd) {background-color: #eee;}
+    #wrap >div:nth-child(even) {background-color: #ccc;}
+
+    #header{height: 100px;}
+    #visual{height: 600px;}
+    #about{height: 600px;} 
+    #portfolio{height: 800px;} 
+    #publishing{height: 800px;} 
+    #design{height: 800px;} 
+    #works{height: 800px;} 
+    #footer{height: 100px;}  
+     
+     /* quick */
+     #quick{
+        position: fixed;top: 100px;right: 200px;
+        width: 100px;height: 350px; background-color: #ccc;   z-index: 10;
+     }
+     #quick h2{font-size: 14px;line-height:40px;text-align: center;
+               background-color: #fff;}
+     .qmenu {width: 100px;height: auto; float:none;margin-top:0;}
+     .qmenu li{width: 100px;height:50px;    line-height: 50px;text-align: center;
+    font-size: 20px; position: relative;  margin: 10px 0;display: block;}
+    .qmenu li:hover{background-color: #fff;}
+
+     #quick .top{width: 100px;height: 50px;  line-height: 50px;text-align: center;
+      background-color: #f60;position: absolute;left: 0;bottom: 0;}
+
+     /* header */
+    .logo{float: left;margin-top: 30px;}
+    .gnb {width: 600px;height: 40px; float: right;margin-top: 40px;}
+    .gnb li{width: 120px;height: 40px;    line-height: 40px;text-align: center;
+    font-size: 20px; position: relative;    background-color: #fff;
+    }
+    .gnb li {float:left;/*border: 1px solid #000;*/
+        box-sizing: border-box; }
+    .gnb li:hover a{display: block; background-color: rgb(54, 54, 54);
+    color:#fff;font-weight:bold;border-radius: 20px;}  
+   
+     /*visual*/
+     .fadeShow{  width: 1200px;height: 600px;   }
+     .fadeShow img{ width: 1200px;height: 600px;position: absolute;  }
+     .fadeShow .active{z-index: 10;}    
+       
+    /* about style */
+
+    #about{position: relative;}
+    #about .abox{position: absolute;left: 50px;top: 50px;    width: 500px;height: 400px;background-color: #eee;    border-radius: 15px;}
+    #about .abox p{margin-top: 20px;color:rgb(50, 50, 50);   font-size: 14px;font-family: '나눔고딕';}
+    #about .bbox{position: absolute;right: 50px;top: 50px;    width: 500px;height: 400px;background-color:#eee;   border-radius: 15px;}
+    #about .bbox h3{font-size:18px;margin-top: 20px;   background-color: #333;color: #fff;}
+    #about .bbox ul{font-size:16px;}
+    #about .bbox ul li{padding: 5px;}
+
+    /* portfolio style */
+
+    #portfolio > div{ float: left;width: 380px;height: 700px;margin:20px 10px;}
+   
+    #portfolio .portbox1{background-color:rgba(255,255,255,0.5);}
+    #portfolio .portbox1 .tit{text-align: center;padding:50px 0;}
+    #portfolio .portbox1 img{width: 350px;height: 300px;;margin-left:15px;
+    border-radius: 40px;box-shadow: 5px 5px 10px rgba(0,0,0,0.5);    }
+    #portfolio .portbox1 .poList{width: 340px;height: 200px;
+    background-color:rgba(255,255,255,0.0);margin: 0 auto;}
+    #portfolio .portbox1 .poList li{padding:10px 5px;font-size: 16px;    }
+    #portfolio .portbox1 .linkBtn {width: 340px;height: 100px;}
+    #portfolio .portbox1 .linkBtn button{float: left; width: 150px;
+    height: 50px;line-height: 50px;background-color: #7e7d7d;
+    color: #fff;  border: 0; margin-left: 20px;cursor: pointer;
+    font-size: 16px;   }
+ 
+    /* publishing */
+    #publishing .pubbox1 li{ float: left;width: 560px;height: 360px;margin:10px 20px;
+    background-color:rgba(0,0,0,0.2);border: 2px dashed #6a6969;box-sizing: border-box;}
+    .pubbox1 li > h3,.pubbox1 li > p{text-align: center;} 
+    .pubbox1 li > .imgbox{display: block;margin: 0 auto;}
+    
+    /* design */
+     #design .desbox1{ width: 1200px;padding:0; margin:0 auto; }
+     .desbox1 li{float: left;width: 380px;height: 360px;margin:0 10px 10px 0;
+    background-color: rgba(0,0,0,0.2);border: 2px dashed #6a6969;box-sizing: border-box;      margin: 0 20px 20px 0;
+      position: relative;overflow: hidden; }
+    
+    .desbox1 li:nth-child(1),.desbox1 li:nth-child(4){margin-left: 10px}
+    .desbox1 li:nth-child(3n){ margin-right: 0;}
+   
+    .desbox1 li img, .desbox1 li div{transition: all 0.5s;}
+    .desbox1 li img{width: 100%;height: 100%;}
+    .desbox1 li div{width: 100%;height: 360px; font:18px/360px '고딕';color: #fff;
+       background-color:rgba(0,0,0,0.5);position: absolute;left: 0;bottom:-360px;
+       text-align:center;}
+    .desbox1 li:hover img{ transform: scale(1.2);}
+    .desbox1 li:hover div{bottom: 0;}    
+
+    /* works */
+    #works .worbox1{ width: 1200px;padding:0; margin:0 auto; }
+    .worbox1 li{ float: left;width: 280px;height: 360px;margin:0 10px 10px 0;
+    background-color: rgba(0,0,0,0.2);border: 2px dashed #6a6969;box-sizing: border-box;}
+      
+     .worbox1 li{float: left;width: 280px;height: 360px;margin:0 10px 10px 0;
+    background-color: rgba(0,0,0,0.2);border: 2px dashed #6a6969;box-sizing: border-box;      margin: 0 20px 20px 0;
+      position: relative;overflow: hidden; }
+    
+    .worbox1 li:nth-child(1),.worbox1 li:nth-child(5){margin-left: 10px}
+    .worbox1 li:nth-child(4n){ margin-right: 0;}
+   
+    .worbox1 li img, .worbox1 li div{transition: all 0.5s;}
+    .worbox1 li img{width: 100%;height: 100%;}
+    .worbox1 li div{width: 100%;height: 60px; font:18px/60px '고딕';color: #fff;
+       background-color:rgba(0,0,0,0.7);position: absolute;left: 0;bottom:-60px;}
+    .worbox1 li:hover img{ transform: scale(1.2);}
+    .worbox1 li:hover div{bottom: 0;}    
+
+    /* footer */
+    #footer .f_copy {height: 100px;line-height: 100px;text-align: center;}
+    </style>
+    <script src="script/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1 class="logo"><a href="#">MYPF</a></h1>
+            <ul class="gnb">
+                <li><a href="#about">about</a></li>
+                <li><a href="#portfolio">portfolio</a></li>
+                <li><a href="#design">design</a></li>
+                <li><a href="#works">works</a></li>
+            </ul>
+        </div>
+        <div id="visual">
+            <div class="fadeShow">
+                <img class="active" src="img/포폴-메인-2.png" alt="p1">
+                <img src="img/포폴-메인-copy.png" alt="p2">
+            </div>
+        </div>
+        <div id="about"><h2>about</h2>
+
+            <div class="abox">
+
+              <img src="img/photo.png" width="300" alt="나의사진">
+
+              <br>
+
+              <h3>디자인과 퍼블리싱코딩도 꼼꼼하게 <br>잘표현하는
+
+                 신입 웹디자이너 김미연입니다.</h3>
+
+             <p>언제나 사용자의 입장을 고려하여 디자인하는 
+
+                    것이 웹디자이너가 기본적으로 가지고 있어야 할 
+
+                    마인드라고 생각합니다. 그렇기 때문에 다양한
+
+                     경험을 통해 사용자에게 편리한 UI/UX를 제공하는
+
+                웹디자인과 퍼블리싱이 저의 목표입니다. 웹/앱디자인,
+
+                       퍼블리싱, 상세페이지, 배너, HTML수정,
+
+                       인물 및 제품 사진 보정  경험이 있습니다.</p>
+
+            </div>
+
+            <div class="bbox">
+
+                <h3>PROFILE</h3>
+
+                 <ul>
+
+                    <li><b>이 름 :</b> 김미연</li>
+
+                    <li><b>연락처 :</b> 010-7182-9048 </li>
+
+                    <li><b>mail :</b> miyeon927@naver.com </li>
+
+                    <li><b>취미 :</b> 산책,독서,피아노 </li>
+
+                 </ul>
+
+                <h3>SKILL</h3>
+
+                 <ul>
+
+                    <li>html(95%)</li>
+
+                    <li>css(95%)</li>
+
+                    <li>jquery(80%)</li>
+
+                    <li>bootstrap(70%)</li>
+
+                    <li>photoshop(95%)</li>
+
+                    <li>figma(95%)</li>
+
+                    <li>illustrate(85%)</li>
+
+                 </ul>
+
+            </div>
+
+        </div> <!-- about end-->
+        <div id="portfolio">
+            <h2>portfolio</h2>
+            <div class="portbox1">
+
+                <h2 class="tit">lesnsgogo 모바일 사이트</h2>
+
+                <img src="img/mobi1.jpg" alt="main1">
+
+                <br>
+
+                <ul class="poList">
+
+                 <li><b>사이트명 </b>  lesnsgogo(모바일)</li>
+
+                 <li><b>제작기간 </b>  3일 (기획/디자인/코딩)</li>
+
+                 <li><b>제 작 물</b> 모바일 상세 페이지</li>
+
+                 <li><b>컨    셉</b> 깔끔한, 세련된</li>
+
+                 <li><b>컬    러</b> gray, black </li>
+
+                </ul>
+
+                <div class="linkBtn">
+
+                  <a href="lesnsgogo/모바일 기획서_김미연.pdf"><button>기획서</button></a>
+
+                  <a href="lesnsgogo/index.html"><button>웹사이트</button></a>
+
+                </div>
+
+             </div><!-- portbox1 end -->
+             <div class="portbox1">
+
+                <h2 class="tit">converse</h2>
+
+                <img src="img/mw1.jpg" alt="main1">
+
+                <br>
+
+                <ul class="poList">
+
+                 <li><b>사이트명 </b>  converse(반응형)</li>
+
+                 <li><b>제작기간 </b>  2일 (기획/디자인/코딩)</li>
+
+                 <li><b>제 작 물</b> 모바일, 데스크탑 메인</li>
+
+                 <li><b>컨    셉</b> 깔끔한, 캐주얼한</li>
+
+                 <li><b>컬    러</b> gray, black </li>
+
+                </ul>
+
+                <div class="linkBtn">
+
+                  <a href="converse/반응형 기획서_김미연.pdf"><button>기획서</button></a>
+
+                  <a href="converse/index.html"><button>웹사이트</button></a>
+
+                </div>
+
+             </div><!-- portbox1 end -->
+             <div class="portbox1">
+
+                <h2 class="tit">stavia 웹사이트</h2>
+
+                <img src="img/web1.jpg" alt="main1">
+
+                <br>
+
+                <ul class="poList">
+
+                 <li><b>사이트명 </b>  stavia(데스크탑)</li>
+
+                 <li><b>제작기간 </b>  1일 (기획/디자인/코딩)</li>
+
+                 <li><b>제 작 물</b> 데스크탑 메인</li>
+
+                 <li><b>컨    셉</b> 깔끔한, 세련된, 고급스러운</li>
+
+                 <li><b>컬    러</b> brown, gray </li>
+
+                </ul>
+
+                <div class="linkBtn">
+
+                  <a href="stavia/데스크탑 기획서_김미연.pdf"><button>기획서</button></a>
+
+                  <a href="stavia/index.html"><button>웹사이트</button></a>
+
+                </div>
+
+             </div><!-- portbox1 end -->
+        </div>
+        <!-- <div id="publishing">
+            <h2>publishing</h2>
+            <ul class="pubbox1">
+                <li><h3>pub1</h3>
+                    <img class="imgbox" src="img_slider/main1.jpg" width="400" height="300" alt="m1">
+                    <p>desktop coding</p>
+                </li>
+                <li><h3>pub2</h3><img class="imgbox" src="img_slider/main2.png" width="400"  height="300" alt="m1">
+                    <p>desktop coding</p></li>
+                <li><h3>pub3</h3><img class="imgbox" src="img_slider/main1.jpg" width="400" alt="m1">
+                    <p>desktop coding</p></li>
+                <li><h3>pub4</h3><img  class="imgbox" src="img_slider/main1.jpg" width="400" alt="m1">
+                    <p>desktop coding</p></li>
+            </ul>
+        </div> -->
+
+        <div id="design">
+            <h2>design</h2>
+        <ul class="desbox1">
+        <li>
+            <img src="img/포폴-엽떡.png" alt="Product1">
+            <div>배경사진 : <em>바이올렛</em></div>
+        </li>
+        <li>
+            <img src="img/포폴-썬그림-1.png" alt="Product2">
+            <div>배경사진 : <em>파랑</em></div>
+        </li>
+        <li>
+            <img src="img/포폴-시계광고-1.png" alt="Product3">
+            <div>배경사진 : <em>분홍</em></div>
+        </li>
+        <li>
+            <img src="img/포폴-시즌광고-1.png" alt="Product4">
+            <div>배경사진 : <em>파스텔</em></div>
+        </li>
+        <li>
+            <img src="img/포폴-의류.png" alt="Product5">
+            <div>배경사진 : <em>그린</em></div>
+        </li>
+        <li>
+            <img src="img/쿠폰2.png" alt="Product6">
+            <div>배경사진 : <em>청록</em></div>
+        </li>
+    </ul>
+        </div>
+       
+        <div id="works">
+            <h2>works</h2>
+            <ul class="worbox1">
+                <li>
+                    <img src="img/포폴-관광포스터.png" alt="Product1">
+                    <div>배경사진 : <em>바이올렛</em></div>
+                </li>
+                <li>
+                    <img src="img/포폴-딸기라떼-신제품-광고.png" alt="Product2">
+                    <div>배경사진 : <em>파랑</em></div>
+                </li>
+                <li>
+                    <img src="img/포폴물.png" alt="Product3">
+                    <div>배경사진 : <em>분홍</em></div>
+                </li>
+                <li>
+                    <img src="img/포폴-에너지드링크-미완.png" alt="Product4">
+                    <div>배경사진 : <em>파스텔</em></div>
+                </li>
+                <li>
+                    <img src="img/포폴-앱.png" alt="Product5">
+                    <div>배경사진 : <em>그린</em></div>
+                </li>
+                <li>
+                    <img src="img/포폴-여름세일.png" alt="Product6">
+                    <div>배경사진 : <em>청록</em></div>
+                </li>
+                <li>
+                    <img src="img/포폴-포스터.png" alt="Product5">
+                    <div>배경사진 : <em>그린</em></div>
+                </li>
+                <li>
+                    <img src="img/포폴-햄.png" alt="Product6">
+                    <div>배경사진 : <em>청록</em></div>
+                </li>
+            </ul>
+        </div>
+
+        <div id="footer">
+         <p class="f_copy">copyright 2025 mysite92.dothome.co.kr</p>
+        </div>
+    </div>
+    <div id="quick">
+       <h2>QUICKMENU</h2>
+       <!-- 메뉴리스트 추가-->
+       <ul class="qmenu">
+        <li><a href="#about">about</a></li>
+        <li><a href="#portfolio">portfolio</a></li>
+        <li><a href="#design">design</a></li>
+        <li><a href="#works">works</a></li>
+    </ul>
+       <p class="top"><a href="#top">top</a></p>
+    </div>
+    <script>
+        var showImg,nextImg;
+        function fadeInOut(){
+           showImg =$('.fadeShow img:eq(0)');
+           nextImg =$('.fadeShow img:eq(1)');
+  
+           nextImg.addClass('active'); //우선순위 높임
+           nextImg.css('opacity','0').animate({opacity:1},1000,function(){
+             $('.fadeShow').append(showImg);
+             showImg.removeClass('active');  
+           });
+        } //fadeInOut 함수종료
+        var timer = setInterval('fadeInOut()',4000);//3초간격 fadeInOut함수호출
+      </script>
+</body>
+</html>

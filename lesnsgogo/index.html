@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lensgogo 쇼핑몰</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+ <style>
+    /* 슬라이더 스타일 스트립트소스 */
+
+        * {box-sizing: border-box;}
+        .slider{width: 100%;margin: 0 auto;}
+        .slick-slide{margin: 0;}
+        .slick-slide img{width: 100%;}
+        .slick-prev::before,
+        .slick-next::before {color:black}
+       .slick-slide {
+           transition: all ease-in-out 0.3s;opacity: 0.2;
+       }
+       .slick-active{opacity: 0.5;}
+       .slick-current{opacity: 1;}
+       </style>
+       <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+       <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">LENSGOGO</a></h1>
+        <p class="login_icon"></p> 
+        <nav class="gnb">
+            <a href="#" class="gnb_btn"><img src="img/gnb_btn_black.png" alt="menu"></a>
+            <a href="login.html" class="uicon"><img src="img/uicon.png" alt="icon"></a>
+            <ul class="gnb_list">
+                <li><a href="index.html">홈</a></li>
+                <li>콘텍트렌즈</li>
+                <li>컬러렌즈</li>
+                <li><a href="product.html">모든 렌즈 보기</a></li>
+                <li><a href="event.html">이벤트</a></li>
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="join-1.html">회원가입</a></li>
+                <li><a href="customer.html">Q & A</a></li>
+            </ul> 
+        </nav>
+        <div class="search_wrap">
+            <form action="#" method="get" class="search_box">
+            <fieldset>
+              <legend class="blind">검색폼</legend>
+               <input type="search" placeholder="검색어입력" />
+               <input type="image" class="searchBtn" src="img/search_btn.png" alt="검색"/>
+            </fieldset>
+            </form>
+           </div>
+    </header>
+    <div id="container">
+        <div class="main_visual regular">
+            <div><img src="img/sil (1).png" alt="sil1"></div>
+            <div><img src="img/sil (2).png" alt="sil2"></div>
+            <div><img src="img/sil (3).png" alt="sil3"></div>
+            <div><img src="img/sil (4).png" alt="sil4"></div>
+        </div>
+    </div>
+    <div id="list_sub">
+        <ul class="p_list">
+            <li><a href="product.html"><img src="img/icon (1).png" alt="i1"><p>전제품</p></a></li>
+            <li><a href="#"><img src="img/icon (2).png" alt="i2"><p>원데이</p></a></li>
+            <li><a href="#"><img src="img/icon (3).png" alt="i3"><p>한달용</p></a></li>
+            <li><a href="#"><img src="img/icon (4).png" alt="i4"><p>컬러별</p></a></li>
+            <li><a href="#"><img src="img/icon (5).png" alt="i5"><p>안경</p></a></li>
+            <li><a href="#"><img src="img/icon (6).png" alt="i6"><p>난시</p></a></li>
+            <li><a href="#"><img src="img/icon (7).png" alt="i7"><p>브랜드</p></a></li>
+            <li><a href="event.html"><img src="img/icon (8).png" alt="i8"><p>이벤트</p></a></li>
+        </ul>
+    </div>
+    <footer>
+        <p class="copyright">Lensgogo is a trademark of Endo & Co </p>
+       <p>아큐브 바슈롬 쿠퍼비전 렌즈직구 일회용렌즈 원데이렌즈 렌즈추천</p>
+    </footer>
+       <script src="slick/slick.js"></script>
+       <script>
+            $(function(){
+                $('.regular').slick({
+                 dots:true,
+                 arrows:false,
+                 Infinite:true,
+                 slidesToShow:1,
+                 slidesToScroll:1,
+                 autoplay:true
+                }); 
+            });
+       </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+@import url(common.css);
+@import url(header.css);
+@import url(footer.css);
+
+#container_sub{padding: 0 5px;margin-top: 70px;}
+#list_sub{padding: 5px;}
+#list_sub h2{font-size: 1.5em;margin-bottom: 15px;padding-left: 20px;padding: 10px;color: #646464;margin-top: 30px;text-align: center;}
+#list_sub .p_list{margin-bottom: 20px;}
+#list_sub .p_list::after{content: '';display: block;clear: both;}
+#list_sub .p_list li{float: left;width: 50%;}
+#list_sub .p_list li a{display: block;margin-right: 5px;margin-bottom: 10px;}
+#list_sub .p_list li:nth-child(2n) a{margin-right: 0;margin-left: 5px;}
+#list_sub .p_list li a img{width: 100%;}
+#list_sub .p_list li a p{color: black;text-align: center;font-size: 12px;font-style: bold;}

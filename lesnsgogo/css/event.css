@@ -1,0 +1,9 @@
+@import url(common.css);
+@import url(header.css);
+@import url(footer.css);
+
+#container{width:90%;padding-bottom:5%;padding-top: 40px;margin: 0 auto;}
+#container::after{content: '';display: block;clear: both;}
+#container h2{padding-top: 90px;font-size: 2em;text-align: center;color: #757575}
+#container .p_list{margin: 10px;float: left;}
+.p_list img{border: 2px solid #a3a3a3;border-radius: 4%;width: 47%;}
